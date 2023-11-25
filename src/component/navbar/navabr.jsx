@@ -26,7 +26,6 @@ const Navbar = () => {
         <div id="FirstDiv" className="div" style={{ display: "none" }}>
             <div className="navbar" style={{ height: "11vh", width: "16vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
                 <Container className=" d-flex align-item-center">
-                    <Col className="col-2 d-flex  justify-content-end">   <FontAwesomeIcon style={{ cursor: 'pointer' }} icon={faBars} /> </Col>
                     <Col className="col-4 d-flex  justify-content-center">Menu</Col>
                     <Col onClick={() => {displayblock(0) }} className="col-4 d-flex  justify-content-end"><FontAwesomeIcon style={{ color: "#cccccc" }} icon={faXmark} /></Col>
                 </Container>
@@ -143,6 +142,7 @@ const Navbar = () => {
             <div className="navbar" style={{ height: "11vh", width: "5vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
                 <Container className=" d-flex align-item-center justify-content-center text-center">
                     <Col onClick={() => {displayblock(1) }} className="col-4 d-flex  "><FontAwesomeIcon style={{ color: "#cccccc" }} icon={faXmark} /></Col>
+             
                 </Container>
             </div>
             <div className="navbar " style={{ height: "50vh", width: "5vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
