@@ -6,28 +6,33 @@ import { faBars, faXmark, faPen, faCircleUser, faUser } from '@fortawesome/free-
 import { faBookmark, faMessage, faCalendarDays } from '@fortawesome/free-regular-svg-icons';
 import { faUsers, faPhotoFilm, faMusic } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { useState } from "react";
 const FirstDiv = document.getElementById('FirstDiv');
 const seconddiv = document.getElementById('seconddiv');
-function displayblock(k){
 
-   if(k==1){
- FirstDiv.style.display="block";
-  seconddiv.style.display="none";
-  }
-  else{
-    FirstDiv.style.display="none";
-    seconddiv.style.display="block";
-
-  }
-}
 
 const Navbar = () => {
+    const [dis,setdis]=useState(0);
+
+const setStyling=()=>{
+setdis(!dis);
+}
+const firstDivStyle = {
+    display: dis ? "block" : "none"
+};
+
+const secondDivStyle = {
+    display: dis ? "none" : "block"
+   
+};
+
     return <>
-        <div id="FirstDiv" className="div" style={{ display: "none" }}>
+     
+        <div id="FirstDiv" className="div"   style={firstDivStyle}>
             <div className="navbar" style={{ height: "11vh", width: "16vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
                 <Container className=" d-flex align-item-center">
                      <Col className="col-4 d-flex  justify-content-center">Menu</Col>
-                    <Col onClick={() => {displayblock(0) }} className="col-4 d-flex  justify-content-end"><FontAwesomeIcon style={{ color: "#cccccc" }} icon={faXmark} /></Col>
+                    <Col onClick={setStyling} className="col-4 d-flex  justify-content-end"><FontAwesomeIcon style={{ color: "#cccccc" }} icon={faXmark} /></Col>
                 </Container>
             </div>
             <div className="navbar" style={{ height: "50vh", width: "16vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
@@ -83,7 +88,7 @@ const Navbar = () => {
                 </Container>
 
             </div>
-            <div className="navbar" style={{ height: "50vh", width: "16vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
+            <div className="navbar"  style={{ height: "50vh", width: "16vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
                 <Container className="">
                     <Col className="col-2 d-flex  justify-content-end">   <FontAwesomeIcon icon={faCircleUser} /> </Col>
                     <Col className="col-7 d-flex  justify-content-center">Chetan Padhen</Col>
@@ -137,13 +142,11 @@ const Navbar = () => {
 
             </div>
         </div>
-
-        <div id="seconddiv" className="div" style={{ display: "block" }}>
+  
+        <div id="seconddiv" className="div"   style={secondDivStyle}>
             <div className="navbar" style={{ height: "11vh", width: "5vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
                 <Container className=" d-flex align-item-center justify-content-center text-center">
-                    <Col onClick={() => {displayblock(1) }} className="col-4 d-flex  "> <FontAwesomeIcon style={{ cursor: 'pointer' }} icon={faBars} /></Col>
-
-                 
+                    <Col onClick={setStyling}  className="col-4 d-flex  "> <FontAwesomeIcon style={{ cursor: 'pointer' }} icon={faBars} /></Col>
                 </Container>
             </div>
             <div className="navbar " style={{ height: "50vh", width: "5vw", borderBottom: '2px solid whitesmoke', borderRight: '2px solid whitesmoke' }}>
