@@ -4,14 +4,21 @@
 @media  (max-width:1230px)  {
     #FirstDiv{
         font-size: 14px;
-      width: 2vw; 
+ 
     }
-
 }
 @media  (max-width:1003)  {
     #FirstDiv{
         font-size: 10px;
   
+    }
+
+}
+@media  (min-width:993)  {
+    #FirstDiv{
+        width: 10vw;
+       color: aqua;
+       background-color: yellow;
     }
 
 }
